@@ -9,21 +9,7 @@ interface ProductCardProps {
 function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/products/${product.id}`}>
-        <div style={{
-        border: "1px solid #eee",
-        borderRadius: 12,
-        padding: 20,
-        background: "#fff",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: 320,
-        height: 350,
-        maxWidth: 320,
-        maxHeight: 350,
-        transition: "box-shadow 0.2s",
-        }}>
+        <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-md flex flex-col items-center w-80 h-96 max-w-80 max-h-96 transition-shadow duration-200">    
         <Image
             src={product.image}
             alt={product.name}
@@ -31,9 +17,9 @@ function ProductCard({ product }: ProductCardProps) {
             height={180}
             style={{ objectFit: "cover", borderRadius: 8, marginBottom: 16 }}
         />
-        <h2 style={{ fontSize: 20, margin: "8px 0 4px 0", fontWeight: 600 }}>{product.name}</h2>
-        <div style={{ color: "#888", fontSize: 15, marginBottom: 8 }}>{product.description}</div>
-        <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>{product.price.toLocaleString()}원</div>
+        <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
+        <div className="text-gray-600 text-sm mb-4">{product.description}</div>
+        <div className="text-lg font-bold">{product.price.toLocaleString()}원</div>
         </div>
     </Link>
   );

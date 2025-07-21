@@ -22,8 +22,8 @@ async function Products() {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <ul style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+    <div className="p-2">
+      <ul className="flex flex-wrap gap-2">
         {products.map((product: Product) => (
           <ProductCard key={product.id} product={product} />
         ))}

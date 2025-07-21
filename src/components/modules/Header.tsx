@@ -3,22 +3,12 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: "1rem 2rem",
-      borderBottom: "1px solid #eee",
-      background: "#fff",
-      position: "sticky",
-      top: 0,
-      zIndex: 1000,
-    }}>
-      <div style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+    <header className="flex items-center justify-between p-4 border-b border-gray-200 bg-white sticky top-0 z-10">
+      <div className="font-bold text-2xl">
         <Link href="/">Product List</Link>
       </div>
       <nav>
-        <ul style={{ display: "flex", gap: "1.5rem", listStyle: "none", margin: 0, padding: 0 }}>
+        <ul className="flex gap-6 list-none m-0 p-0">
           <li>
             <Link href="/">Home</Link>
           </li>
