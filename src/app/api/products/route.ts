@@ -1,6 +1,8 @@
-import { PRODUCTS } from '@/constants/products';
+import { getAllProducts } from '@/mocks/api/products';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  return NextResponse.json(PRODUCTS);
+  const products = await getAllProducts();
+  
+  return NextResponse.json(products);
 }
