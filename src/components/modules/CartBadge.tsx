@@ -1,11 +1,10 @@
 'use client'
 
-import { useState } from "react";
+import { useCartStore } from "@/store/cart";
 
 function CartBadge() {
-    const [cartCount, setCartCount] = useState(0);
+    const cartCount = useCartStore((state) => state.cart.length);
 
-    
     return (
         <div className="flex items-center justify-center gap-2">
             <svg data-testid="geist-icon"  strokeLinejoin="round" viewBox="0 0 16 16" width="28" height="28" style={{ color: "currentcolor" }}>

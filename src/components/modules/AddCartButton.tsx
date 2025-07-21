@@ -1,6 +1,7 @@
 'use client'
 
 import Button from "@/components/atoms/Button";
+import { useCartStore } from "@/store/cart";
 import { Product } from "@/types/products";
 
 interface AddCartButtonProps {
@@ -8,9 +9,10 @@ interface AddCartButtonProps {
 }
 
 function AddCartButton({ product }: AddCartButtonProps) {
+    const { addCart } = useCartStore();
+
     const handleAddCart = () => {
-        // TODO: 장바구니 담기 로직 구현
-        // console.log(product);
+        addCart(product);
     }
 
     return (
