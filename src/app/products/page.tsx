@@ -6,10 +6,13 @@ async function Products() {
   let error: string | null = null;
 
   try {
-    const res = await fetch('http://localhost:3000/api/products');
+    const res = await fetch(`http://localhost:3000/api/products`, {
+      cache: 'no-store',
+    });
     if (!res.ok) throw new Error("서버 응답이 올바르지 않습니다.");
     products = await res.json();
-  } catch (e) {
+  } 
+  catch (e) {
     error = "상품 정보를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
   }
 
