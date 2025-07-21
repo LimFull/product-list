@@ -44,3 +44,4 @@ export const PRODUCTS: Product[] = [
     description: '저소음 클릭 · 오토슬립 기능 · 2.4 GHz & Bluetooth 5.0',
     },
    ];
+

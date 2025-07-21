@@ -1,3 +1,4 @@
+import ProductCard from "@/components/modules/ProductCard";
 import { Product } from "@/types/products";
 
 async function Products() {
@@ -5,11 +6,10 @@ async function Products() {
   const products = await res.json();
 
   return (
-    <div>
-      <h1>Products</h1>
-      <ul>
+    <div style={{ padding: "20px" }}>
+      <ul style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
         {products.map((product: Product) => (
-          <li key={product.id}>{product.name}</li>
+          <ProductCard key={product.id} product={product} />
         ))}
       </ul>
     </div>
